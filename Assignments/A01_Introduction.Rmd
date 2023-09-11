@@ -48,7 +48,7 @@ Enter answers to the questions just below the >Answer: prompt.
 3. Are there any components of the course about which you feel apprehensive?
 
 > Answer: No. Very excited about this course!
-
+  
 
 ## 3) GitHub
 
