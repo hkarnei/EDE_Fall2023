@@ -8,6 +8,7 @@ output: pdf_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 
 ## Data frame definition
@@ -19,6 +20,10 @@ When we import data to R, data frame is the preferred way for storing the data b
 ## Data frame built-in example
 
 Let's look into a built-in data frame from package "datasets" - cars. The data give the speed of cars and the distances taken to stop.
+
+```{r}
+getwd()
+```
 
 ```{r cars}
 cars
