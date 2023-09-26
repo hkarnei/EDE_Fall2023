@@ -14,12 +14,11 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 library(tidyverse);library(lubridate); library(here)
 
 #Read in data, don't convert strings to factors
-sites <- read.csv(here('Data/Raw/NWIS_SiteFlowData_NE_Raw.csv'))
+sites <- read.csv(here('Data/Raw/NWIS_SiteFlowData_NE_RAW.csv'))
 dim(sites)
 
 #Convert date column to date object
 sites$date <- ymd_hms(sites$date)
-
 ```
 
 
@@ -70,8 +69,6 @@ A **factor** is a grouping variable: rows with the same value in the factor colu
 ggplot(sites,aes(x=dow)) +
   geom_bar()
 ```
-
-
 
 ```{r add levels to our data}
 #Update the levels to include all seven days of the week (note we have to start with existing levels)
