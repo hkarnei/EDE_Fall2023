@@ -8,7 +8,7 @@ editor_options:
 toc: true
 ---
 
-\tableofcontents
+
 
 
 ## Set up the coding environment

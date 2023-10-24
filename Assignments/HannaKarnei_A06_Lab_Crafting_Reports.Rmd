@@ -113,14 +113,18 @@ ggplot(data_2018, aes(x = month_abb, y =Ozone)) +
   xlab('') +
   ylab(expression(paste("Concentration (", mu, "g/m^3", ")"))) +
   ggtitle ('Recorded Ozone by Month (2018)')+
-  theme(plot.title = element_text(hjust = 0))
+    theme(
+    plot.title = element_text(hjust = 0),
+    axis.title.y = element_text(hjust = 0),
+    axis.text.y = element_text(hjust = 0)
+  )
 
 ```
 
 
 ```{r boxplot 2, warning=FALSE, echo=FALSE, fig.cap='Monthly Ozone, 2019', fig.width=6, fig.height=4}
 
-data_2019 <- epa_data %>%
+p2 <- data_2019 <- epa_data %>%
   filter(Year == 2019)
 
 data_2019$month_abb <- month.abb[data_2019$Month]
@@ -131,7 +135,11 @@ ggplot(data_2019, aes(x = month_abb, y =Ozone)) +
   xlab('') +
   ylab(expression(paste("Concentration (", mu, "g/m^3", ")"))) +
   ggtitle ('Recorded Ozone by Month (2019)')+
-  theme(plot.title = element_text(hjust = 0))
+   theme(
+    plot.title = element_text(hjust = 0),
+    axis.title.y = element_text(hjust = 0),
+    axis.text.y = element_text(hjust = 0)
+  )
 
 ```
 
