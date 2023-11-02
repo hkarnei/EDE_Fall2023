@@ -196,18 +196,14 @@ head(GaringerOzone.monthly)
 
 GaringerOzone.daily.ts <- ts(
   GaringerOzone$Daily.Max.8.hour.Ozone.Concentration,
-  start = c(year(min(GaringerOzone$Date)), month(min(GaringerOzone$Date))),
-  end = c(year(max(GaringerOzone$Date)), month(max(GaringerOzone$Date))),
-  frequency = 365
+  start = c(2010,1), frequency = 365
 )
 
 GaringerOzone.monthly.ts <- ts(
   GaringerOzone.monthly$MeanOzone,
-  start = c(min(GaringerOzone.monthly$NewDate)),
-  end = c(max(GaringerOzone.monthly$NewDate)),
+  start = c(2010,1),
   frequency = 12
 )
-
 ```
 
 
@@ -255,7 +251,7 @@ print(monthly_ozone_plot)
 
 14. To accompany your graph, summarize your results in context of the research question. Include output from the statistical test in parentheses at the end of your sentence. Feel free to use multiple sentences in your interpretation.
 
-> Answer: The negative score (-13757) and tau (-0.000185) indicate a decreasing trend in the time series data. However, the high p-value (0.95617) does not allow us to reject the null hypothesis. Therefore, we conclude that ozone concentrations have not changed over the 2010s at this station. 
+> Answer: The negative score (-77) and tau (-0.143) indicate a decreasing trend in the time series data. The p-value smaller than 0.05 (0.0467) allows us to reject the null hypothesis. Therefore, we can conclude that ozone concentrations have changed over the 2010s at this station. 
 
 15. Subtract the seasonal component from the `GaringerOzone.monthly.ts`. Hint: Look at how we extracted the series components for the EnoDischarge in the lesson Rmd file.
 
@@ -275,4 +271,4 @@ summary(monthly_ozone_trend_noseason)
 
 ```
 
-> Answer: Based on the results of the Mann Kendall test, we are not able to reject the null hypothesis (p=0.93597). Hence the answer is no, the ozone concentrations have not changed over the 2010s at the Garinger station. The p-value of 0.95617 in the seasonal Mann Kendall test also led us to the same conclusion. 
+> Answer: Based on the results of the Mann Kendall test, we are able to reject the null hypothesis (p=0.0075) and identify a decreasing trend in the data (tau=-0.165, score=-1179). Hence the answer is yes, the ozone concentrations have changed over the 2010s at the Garinger station. The p-value of 0.0467 in the seasonal Mann Kendall test also led us to the same conclusion. 
